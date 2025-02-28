@@ -1,0 +1,150 @@
+/* Navbar Container */
+.navbar {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fcfcfc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    width: 100%;
+    position: fixed;  /* Fixed position to keep it on top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3b3b74;
+}
+
+/* Navbar Links */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #3b3b74;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #2a2a5a;
+}
+
+/* Active Page Highlight */
+.nav-links a.active {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* ORDER Button */
+.appointment-btn {
+    background-color: #3b3b74;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 30px;
+    transition: background 0.3s ease-in-out;
+}
+
+.appointment-btn:hover {
+    background-color: #2a2a5a;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    
+    background: none;
+    border: none;
+    color: #171719; /* Default color */
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .hamburger {
+      
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #171719; /* Default color */
+    position: absolute;
+    right: 45px; /* Move it slightly to the left */ /* Move it slightly to the left */
+
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        border-radius: 0px;
+        right: -100%;
+        width: 200px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.95);
+        text-align: center;
+        padding: 50px 20px;
+        box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.5s ease-in-out;
+    }
+
+    .nav-container.open {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+        width: 100%;
+        transition: background 0.3s ease-in-out;
+    }
+
+    /* .nav-links a:hover {
+        background: #f0f0f0;
+        color: #2a2a5a;
+        border-radius: 5px;
+    } */
+
+    .appointment-btn {
+        margin-top: 20px;
+        padding: 12px 20px;
+        width: 100px;
+        margin-left: 50px;
+        
+    }
+}

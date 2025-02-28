@@ -1,0 +1,107 @@
+.services-heading {
+  margin-top: 40px; /* Adjust this value based on your navbar height */
+  text-align: center;
+}
+
+.services-container {
+  text-align: center;
+  padding-top: 80px; /* Adjust this value based on navbar height */
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px); /* Smooth background effect */
+      overflow-x: hidden;
+
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 150px;
+  width: 100%;
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Glassmorphism Effect for Cards */
+.service-card {
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  border-radius: 10px;
+  overflow-x: hidden;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease, transform 0.5s ease-in-out;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px); /* Blur effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+.service-card {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 20px;
+  flex-grow: 1;
+  color: black; /* Dark black text */
+}
+
+.service-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: black; /* Dark black text */
+}
+
+.service-description {
+  font-size: 14px;
+  color: black; /* Dark black text */
+}
+
+.service-link {
+  color: #e06360;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
