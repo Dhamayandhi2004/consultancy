@@ -1,0 +1,142 @@
+.transportation-container {
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  width: 90%;
+  margin: 40px auto;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap; /* helps on very small screens */
+}
+
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 21px 23px;
+  font-size: 16px;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-left: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #db529f;
+}
+
+
+.bus-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bus-card {
+  width: 300px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: royalblue;
+  color: white;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  margin: -15px -15px 15px -15px;
+}
+
+.type-badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+
+.search-bar-wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+.suggestion-list {
+  position: absolute;
+  top: 100%;
+  left: 50px;
+  right: 50px;
+  max-height: 100px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 10;
+  border-radius: 20px;
+  list-style: none;
+  padding: 10px 18px;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.suggestion-list li {
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.suggestion-list li:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .search-bar button {
+    border: none;
+    padding: 12px;
+  }
+
+  .suggestion-list {
+    left: 10px;
+    right: 10px;
+  }
+}

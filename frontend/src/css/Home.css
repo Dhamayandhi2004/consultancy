@@ -27,9 +27,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../assets/truck.jpg") no-repeat center center;
+    /* background: url("../assets/truck.jpg") no-repeat center center; */
     background-size: cover;
-    filter: blur(4px); /* Reduced blur */
+    /* filter: blur(4px); Reduced blur */
     z-index: -1;
     transition: opacity 1s ease-out;
 }
@@ -41,8 +41,8 @@
     background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
     padding: 30px;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
+    /* -webkit-backdrop-filter: blur(10px); */
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 90%;
@@ -52,14 +52,14 @@
 /* Text Styles */
 .sub-heading {
     font-size: 20px;
-    color: #fff;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .main-heading {
     font-size: 45px;
-    color: #fff;
+    color: #000000;
     font-weight: bold;
     margin: 10px 0;
     line-height: 1.2;
@@ -137,3 +137,66 @@
     }
     
 }
+
+
+
+/* Feedback Button */
+.feedback-btn {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  /* Pop-up Overlay */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Pop-up Box */
+  .popup {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .popup textarea {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  /* Rating */
+  .rating {
+    margin-bottom: 10px;
+  }
+  
+  .star {
+    font-size: 24px;
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .star.selected {
+    color: gold;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  

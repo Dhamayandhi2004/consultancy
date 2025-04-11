@@ -1,0 +1,50 @@
+.admin-dashboard {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.dashboard-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.dashboard-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-overlay p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .dashboard-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-overlay p {
+    font-size: 1rem;
+  }
+}

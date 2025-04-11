@@ -1,6 +1,6 @@
 .services-heading {
   margin-top: 40px; /* Adjust this value based on your navbar height */
-  text-align: center;
+
 }
 
 .services-container {
@@ -11,7 +11,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(10px); /* Smooth background effect */
+  /* backdrop-filter: blur(10px); Smooth background effect */
       overflow-x: hidden;
 
 }
@@ -28,17 +28,17 @@
 
 /* Glassmorphism Effect for Cards */
 .service-card {
-  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  background: whitesmoke; /* Transparent background */
   border-radius: 10px;
   overflow-x: hidden;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease, transform 0.5s ease-in-out;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease, transform 0.5s ease-in-out; */
   width: 400px;
-  height: 500px;
+  height: 400px;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(10px); /* Blur effect */
+  /* backdrop-filter: blur(10px); Blur effect */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
   opacity: 0;
   transform: translateY(50px);

@@ -7,14 +7,14 @@
   padding: 40px 20px;
   margin-top: 80px; /* Add this line to create gap from navbar */
 
-  background: #f4f4f4;
+  background:transparent;
   font-family: Arial, sans-serif;
   flex-wrap: wrap; /* Ensures wrapping on smaller screens */
 }
 
 /* Individual Card Container */
 .contact-card {
-  background: #fff;
+  background:white;
   width: 350px;
   
   height: 300px;
@@ -68,6 +68,7 @@
   display: flex;
   align-items: center;
   margin: 10px 0;
+ 
  
 }
 /* Social Icons */

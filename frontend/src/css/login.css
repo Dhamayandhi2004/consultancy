@@ -27,11 +27,11 @@
   right: 20px;
   cursor: pointer;
   font-size: 24px;
-  color: #333;
+  color: white;
 }
 
 .close-btn:hover {
-  color: red;
+  color: rgb(0, 0, 0);
 }
 
 /* Form Title */
@@ -46,6 +46,7 @@ input {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
+  margin-right: 30px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 16px;
@@ -59,7 +60,7 @@ input:focus {
 
 /* Login Button */
 .login-btn {
-  width: 100%;
+  width: 106%;
   padding: 12px;
   background-color: #007BFF;
   color: white;
@@ -99,24 +100,7 @@ input:focus {
   background: #ddd;
 }
 
-/* Google Sign-In Button */
-.google-signin-btn {
-  width: 100%;
-  padding: 12px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-}
 
-.google-signin-btn:hover {
-  background-color: #f7f7f7;
-}
 
 /* Google Logo */
 .google-logo {
@@ -157,9 +141,9 @@ input:focus {
       padding: 8px;
   }
 
-  .close-btn {
+  /* .close-btn {
       font-size: 20px;
       top: 5px;
       right: 10px;
-  }
+  } */
 }

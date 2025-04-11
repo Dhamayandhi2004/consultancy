@@ -9,7 +9,7 @@
     position: relative;
     overflow: hidden;
     opacity: 0; /* Start with 0 opacity for fade-in effect */
-    background-image: url("../assets/g1.jpg");
+    /* background-image: url("../assets/g1.jpg"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -27,16 +27,16 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    filter: blur(4px); /* Reduced blur */
+    background:transparent;
+    /* filter: blur(4px); Reduced blur */
     transition: background 1.5s ease-in-out, backdrop-filter 1.5s ease-in-out;
 }
 
 /* Background Blur Effect on Hover */
 .about-container:hover::before {
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
+    /* -webkit-backdrop-filter: blur(10px); */
 }
 
 /* Glass Effect on Text Section */
@@ -44,13 +44,15 @@
     position: relative;
     z-index: 1;
     max-width: 60%;
+    margin-top: 70px;
     padding: 30px;
-    color: white;
-    background: rgba(255, 255, 255, 0.1);
+    color: rgb(0, 0, 0);
+    background-color: ghostwhite;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     animation: fadeIn 1.5s ease-in-out;
     text-align: center;
+    margin-right: 20px;
 }
 
 /* Headings */
@@ -85,7 +87,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.15);
+    background: whitesmoke;
     padding: 15px;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
@@ -94,7 +96,7 @@
 
 .feature:hover {
     transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.3);
+    background: rgb(194, 60, 201);
 }
 
 .feature-icon {

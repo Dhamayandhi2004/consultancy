@@ -1,7 +1,8 @@
 import React from "react";
 import "../css/services.css";
-import { Link } from "react-router-dom";
-import logisticsImg from "../assets/c2.jpg"; 
+// import { Link } from "react-router-dom";
+
+import logisticsImg from "../assets/d.jpg"; 
 import FreightImg from "../assets/c3.jpg";
 import WarehouseImg from "../assets/c4.jpg";
 import packagingImg from "../assets/s.jpg";
@@ -71,9 +72,9 @@ function Services() {
               <h3 className="service-role">{service.role}</h3>
               <h2 className="service-title">{service.title}</h2>
               <p className="service-description">{service.description}</p>
-              <Link to="/services" className="service-link">
+              {/* <Link to="/services" className="service-link">
                 Know More →
-              </Link>
+              </Link> */}
             </div>
           </div>
         ))}

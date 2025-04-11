@@ -1,0 +1,35 @@
+.feedback-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .review-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .review-stars {
+    color: gold;
+    margin-bottom: 5px;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  .review-text {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .review-meta {
+    font-size: 13px;
+    color: #555;
+    text-align: right;
+  }
+  
