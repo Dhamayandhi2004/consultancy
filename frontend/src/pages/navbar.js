@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { useAuth } from './AuthContext';
 import "../css/Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
 
 const Navbar = ({ onFeedbackClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,8 +25,7 @@ const Navbar = ({ onFeedbackClick }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("userEmail");
-    localStorage.removeItem("adminLoggedIn");
-    navigate("/");
+    navigate("/admin");
   };
 
   // ❌ Hide navbar on /admin login page
@@ -57,9 +59,13 @@ const Navbar = ({ onFeedbackClick }) => {
               </Link>
             </li>
             <li>
-              <button onClick={handleLogout} className="logout-btn">
-                Logout
-              </button>
+            <li>
+  <button onClick={handleLogout} className="logout-btn">
+    <FontAwesomeIcon icon={faRightFromBracket} style={{ marginRight: "8px" }} />
+   
+  </button>
+</li>
+
             </li>
           </ul>
         </div>

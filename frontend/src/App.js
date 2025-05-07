@@ -14,6 +14,7 @@ import Login from './pages/Login'; // Adjust path as needed
 import Feedback from './pages/feedback';
 import AdminDashboard from './pages/AdminDashboard'; // create this component
 import Manage from "./pages/manage";
+import ProtectedRoute from './pages/protectedRoute';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -64,9 +65,22 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/admin" element={<Login/>} />  
-          <Route path="/AdminDashboard" element={<AdminDashboard />} />
-          <Route path ="/manage" element={<Manage/>}/>
-
+          <Route 
+            path="/AdminDashboard" 
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            } 
+          />
+          <Route
+          path="/manage"
+          element={
+            <ProtectedRoute>
+              <Manage/>
+            </ProtectedRoute>
+          }
+          />
           </Routes>
 
         {/* Feedback Popup */}

@@ -15,6 +15,8 @@ const Home = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+    
   return (
     <div className={`hero ${isScrolled ? "scrolled" : ""}`}>
       <div className="overlay">

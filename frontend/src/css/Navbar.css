@@ -144,3 +144,15 @@
 
  
 }
+
+.logout-btn {
+   background-color: transparent;
+   border: none;
+   color: #00e5ff;
+   font-size: 1rem;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+ }
+ 

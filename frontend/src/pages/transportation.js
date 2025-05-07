@@ -36,17 +36,17 @@ const Transportation = () => {
     setShowSuggestions(false);
   };
 
-  const getTypeBadge = (type) => {
-    let color = 'gray';
-    if (type.toLowerCase() === 'standard') color = 'green';
-    else if (type.toLowerCase() === 'deluxe') color = 'orange';
-    else if (type.toLowerCase() === 'ac') color = 'skyblue';
-    return (
-      <span className="type-badge" style={{ backgroundColor: color }}>
-        {type}
-      </span>
-    );
-  };
+  // const getTypeBadge = (type) => {
+  //   let color = 'gray';
+  //   if (type.toLowerCase() === 'standard') color = 'green';
+  //   else if (type.toLowerCase() === 'deluxe') color = 'orange';
+  //   else if (type.toLowerCase() === 'ac') color = 'skyblue';
+  //   return (
+  //     <span className="type-badge" style={{ backgroundColor: color }}>
+  //       {type}
+  //     </span>
+  //   );
+  // };
 
   return (
     <div className="transportation-container">
@@ -86,7 +86,7 @@ const Transportation = () => {
             <div key={bus._id} className="bus-card">
               <div className="card-header">
                 <h3>{bus.from} to {bus.to}</h3>
-                {getTypeBadge(bus.busType)}
+                {/* {getTypeBadge(bus.busType)} */}
               </div>
               <p><strong>Driver:</strong> {bus.driverName}</p>
               <p><strong>Bus No:</strong> {bus.busNumber}</p>
