@@ -1,5 +1,4 @@
 
-/* Article Section */
 .article-card {
   display: flex;
   background:ghostwhite;
@@ -14,14 +13,14 @@
   width: 100%;
 }
 
-/* Modified Article Image Section */
+
 .article-image-container {
   flex: 1;
   min-width: 45%;
   border-radius: 15px 0 0 15px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 1/1; /* Enforce square shape */
+  /* aspect-ratio: 1/1; Enforce square shape */
   background: #f8fafc; /* Add background for empty space */
     height: 250px; /* Reduced container height */
 
