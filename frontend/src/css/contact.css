@@ -3,16 +3,15 @@
   justify-content: center;
   align-items: flex-start;
   gap: 80px;
-  /* Instead of padding: 40px 20px; you could do: */
+  
   padding: 40px 20px;
-  margin-top: 80px; /* Add this line to create gap from navbar */
+  margin-top: 80px; 
 
   background:transparent;
   font-family: Arial, sans-serif;
-  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+  flex-wrap: wrap; 
 }
 
-/* Individual Card Container */
 .contact-card {
   background:white;
   width: 350px;
@@ -24,32 +23,28 @@
   box-sizing: border-box;
   text-align: left;
 
-  /* Initial state for fade-in-up animation */
   opacity: 0;
   transform: translateY(50px);
-  animation: fadeInUp 0.8s ease forwards; /* Animate on page load */
+  animation: fadeInUp 0.8s ease forwards; 
 }
 
-/* Fade-in-up Keyframes */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(50px); /* Start 50px lower */
+    transform: translateY(50px); 
   }
   100% {
     opacity: 1;
-    transform: translateY(0);    /* End in original position */
+    transform: translateY(0);    
   }
 }
 
-/* Card Title */
 .card-title {
   font-size: 24px;
-  color: #6b3fa0; /* Purple heading color */
+  color: #6b3fa0; 
   margin-bottom: 16px;
 }
 
-/* Generic Card Text */
 .card-description {
   font-size: 16px;
   color: #777;
@@ -63,7 +58,6 @@
   margin: 5px 0;
 }
 
-/* Info Items (Phone/Email) */
 .info-item {
   display: flex;
   align-items: center;
@@ -71,7 +65,8 @@
  
  
 }
-/* Social Icons */
+
+
 .social-icons {
   margin-top: 16px;
 }
@@ -85,11 +80,11 @@
 }
 
 .social-icons a:hover {
-  color: #6b3fa0; /* Purple on hover */
+  color: #6b3fa0; 
 }
 
 .social-icons a:last-child {
-  margin-right: 0; /* Remove extra space on the last icon */
+  margin-right: 0; 
 }
 
 .icon-circle {
@@ -109,7 +104,6 @@
   color: #000;
 }
 
-/* Service Items */
 .service-item {
   display: flex;
   align-items: center;
@@ -127,7 +121,7 @@
 .service-heading {
   margin: 0;
   font-size: 18px;
-  color: #a6192e; /* Red heading color */
+  color: #a6192e; 
 }
 
 .service-subtitle {
@@ -136,7 +130,6 @@
   color: #555;
 }
 
-/* Social Icons */
 .social-icons {
   margin-top: 16px;
 }
@@ -149,12 +142,11 @@
 }
 
 .social-icons a:hover {
-  color: #6b3fa0; /* Purple on hover */
+  color: #6b3fa0; 
 }
 
 
 
-/* Map Styling */
 .map-card {
   background: white;
   padding: 2rem;
@@ -189,8 +181,6 @@
 }
 
 
-
-/* Responsive Layout */
 @media (max-width: 768px) {
   .contact-card {
     width: 100%;

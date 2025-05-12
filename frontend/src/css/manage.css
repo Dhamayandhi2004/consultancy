@@ -1,20 +1,16 @@
-/* manage.css */
 
-/* Base Container Styles */
 .manage-container {
   padding: 2rem 1rem;
   max-width: 550px;
   margin: 0 auto;
   margin-top: 100px;
   background-color: ghostwhite;
- /* Or any color you want */
-  border-radius: 10px; /* Optional: for rounded corners */
+  border-radius: 10px; 
 }
 .manage-container input{
   max-width: 500px;
 }
 
-/* Header Styles */
 .header-row {
   margin-bottom: 2rem;
   
@@ -30,8 +26,6 @@
   color: #7f8c8d;
   font-size: 1.1rem;
 }
-
-/* Card Container Styles */
 .list-card {
   border: none;
   border-radius: 10px;
@@ -52,7 +46,6 @@
   color: #2c3e50;
 }
 
-/* Search Styles */
 .search-col {
   display: flex;
   justify-content: flex-end;
@@ -86,7 +79,6 @@
   box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
 }
 
-/* Bus Cards Grid */
 .bus-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -132,7 +124,6 @@
   justify-content: space-between;
 }
 
-/* Bus Card Content Styles */
 .bus-card-row {
   display: flex;
   justify-content: space-between;
@@ -168,7 +159,6 @@
   font-weight: 500;
 }
 
-/* Action Buttons */
 .action-button {
   display: flex;
   align-items: center;
@@ -199,7 +189,8 @@
   color: white;
 }
 
-/* Badge Styles */
+
+
 .bus-type-badge {
   font-size: 0.75rem;
   padding: 0.35rem 0.75rem;
@@ -208,7 +199,6 @@
   text-transform: uppercase;
 }
 
-/* Alert Messages */
 .no-data-message {
   margin: 0;
   text-align: center;
@@ -227,7 +217,6 @@
   color: #721c24;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .bus-cards-container {
     grid-template-columns: 1fr;
@@ -263,9 +252,6 @@
   }
 }
 
-/* manage.css */
-
-/* Form Container Styles */
 .form-card {
   border: none;
   border-radius: 10px;
@@ -285,14 +271,12 @@
   font-weight: 600;
 }
 
-/* Narrower form inputs */
 .form-card .form-control,
 .form-card .form-select {
   padding: 0.5rem 0.75rem;
   font-size: 0.95rem;
 }
 
-/* Bus List Container */
 .bus-list-card {
   border: none;
   border-radius: 10px;
@@ -300,7 +284,6 @@
   margin-bottom: 2rem;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .form-card {
     width: 100%;

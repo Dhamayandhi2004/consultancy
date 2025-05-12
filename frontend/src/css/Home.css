@@ -1,5 +1,4 @@
-/* Fullscreen Hero Section */
-/* Fullscreen Hero Section */
+
 .hero {
     position: relative;
     width: 100%;
@@ -19,7 +18,6 @@
 }
 
 
-/* Fullscreen Blurred Background */
 .hero::before {
     content: "";
     position: fixed;
@@ -27,22 +25,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: url("../assets/truck.jpg") no-repeat center center; */
     background-size: cover;
-    /* filter: blur(4px); Reduced blur */
     z-index: -1;
     transition: opacity 1s ease-out;
 }
 
 
 
-/* Glassy Overlay */
 .overlay {
-    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    background: rgba(255, 255, 255, 0.15); 
     padding: 30px;
     border-radius: 15px;
-    /* backdrop-filter: blur(10px); */
-    /* -webkit-backdrop-filter: blur(10px); */
+   
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 90%;

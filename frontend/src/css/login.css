@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-/* Login Page Background */
+
 .login-page {
   display: flex;
   justify-content: center;
@@ -10,7 +10,6 @@
   background: #f4f4f4;
 }
 
-/* Form Container */
 .form-container {
   background-color: white;
   padding: 40px;
@@ -21,7 +20,6 @@
   position: relative;
 }
 
-/* Close Button */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -31,18 +29,14 @@
   color: white;
 }
 
-/* .close-btn:hover {
-  color: rgb(0, 0, 0);
-} */
 
-/* Form Title */
 .form-title {
   margin-bottom: 20px;
   color: #333;
   font-size: 24px;
 }
 
-/* Input Fields */
+
 input {
   width: 90%;
   padding: 12px;
@@ -54,12 +48,7 @@ input {
   transition: border-color 0.3s;
 }
 
-/* input:focus {
-  outline: none;
-  border-color: #007BFF;
-} */
 
-/* Login Button */
 .login-btn {
   width: 50%;
   padding: 12px;
@@ -80,34 +69,6 @@ input {
 }
 
 
-/* .login-btn:hover {
-  background-color: #0056b3;
-} */
-/* 
-/* Register Text */
-/* .register-text {
-  margin-top: 15px;
-  color: #666;
-} */ */
-
-/* .register-link {
-  background: none;
-  border: none;
-  font-size: 14px;
-  cursor: pointer;
-} */
-
-/* .register-link:hover {
-  text-decoration: underline;
-} */
-
-/* Divider
-.divider {
-  margin: 20px 0;
-  border: 0;
-  height: 1px;
-  background: #ddd;
-} */
 
 
 
@@ -118,7 +79,6 @@ Google Logo
   margin-right: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .form-container {
       padding: 30px;
@@ -150,11 +110,7 @@ Google Logo
       padding: 8px;
   }
 
-  /* .close-btn {
-      font-size: 20px;
-      top: 5px;
-      right: 10px;
-  } */
+  
 }
 .password-wrapper {
   position: relative;

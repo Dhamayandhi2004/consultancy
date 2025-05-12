@@ -1,17 +1,17 @@
 .services-heading {
-  margin-top: 40px; /* Adjust this value based on your navbar height */
+  margin-top: 40px; 
 
 }
 
 .services-container {
   text-align: center;
-  padding-top: 80px; /* Adjust this value based on navbar height */
+  padding-top: 80px; 
   max-width: 100%;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* backdrop-filter: blur(10px); Smooth background effect */
+ 
       overflow-x: hidden;
 
 }
@@ -26,20 +26,17 @@
   box-sizing: border-box;
 }
 
-/* Glassmorphism Effect for Cards */
 .service-card {
-  background: whitesmoke; /* Transparent background */
+  background: whitesmoke;
   border-radius: 10px;
   overflow-x: hidden;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
   text-align: left;
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease, transform 0.5s ease-in-out; */
   width: 400px;
   height: 400px;
   display: flex;
   flex-direction: column;
-  /* backdrop-filter: blur(10px); Blur effect */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  border: 1px solid rgba(255, 255, 255, 0.3); 
   opacity: 0;
   transform: translateY(50px);
 }
@@ -73,18 +70,18 @@
 .service-content {
   padding: 20px;
   flex-grow: 1;
-  color: black; /* Dark black text */
+  color: black; 
 }
 
 .service-title {
   font-size: 20px;
   font-weight: bold;
-  color: black; /* Dark black text */
+  color: black;
 }
 
 .service-description {
   font-size: 14px;
-  color: black; /* Dark black text */
+  color: black; 
 }
 
 .service-link {
@@ -93,7 +90,6 @@
   font-weight: bold;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .services-grid {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
