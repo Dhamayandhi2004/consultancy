@@ -1,10 +1,9 @@
-import React from 'react';
-import { useState,useEffect} from 'react';
-import { useLocation } from 'react-router-dom'; // import this
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../css/feedback.css";
 
 const Feedback = () => {
-  const location = useLocation(); // get current route
+  const location = useLocation();
   const [showModal, setShowModal] = useState(false);
   const [feedbacks, setFeedbacks] = useState([]);
   const [newReview, setNewReview] = useState({
@@ -14,12 +13,31 @@ const Feedback = () => {
     date: new Date().toISOString().split("T")[0],
   });
 
+  const API_URL = "https://consultancy-1-d68u.onrender.com/api/feedback";
+
   useEffect(() => {
-    fetch("https://consultancy-1-d68u.onrender.com/api/feedback")
-      .then(res => res.json())
-      .then(data => setFeedbacks(data))
-      .catch(err => console.error("Failed to fetch feedbacks:", err));
-  }, []);
+    const fetchFeedbacks = async () => {
+      try {
+        const response = await fetch(API_URL, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setFeedbacks(data);
+      } catch (error) {
+        console.error("Failed to fetch feedbacks:", error);
+        alert("Failed to load feedbacks. Please try again later.");
+      }
+    };
+
+    fetchFeedbacks();
+  }, [API_URL]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,28 +50,32 @@ const Feedback = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const res = await fetch("https://consultancy-1-d68u.onrender.com/api/feedback", {
+      const response = await fetch(API_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(newReview),
       });
-      await res.json();
-      alert("Feedback submitted!");
-      setShowModal(false);
 
-      // Refresh feedback list after submitting
-      const updated = await fetch("https://consultancy-1-d68u.onrender.com/api/feedback");
-      const updatedData = await updated.json();
-      setFeedbacks(updatedData);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const newFeedback = await response.json();
+      setFeedbacks((prev) => [...prev, newFeedback]);
+      setShowModal(false);
+      alert("Feedback submitted successfully!");
+
     } catch (error) {
-      alert("Error submitting feedback!");
-      console.error(error);
+      console.error("Error submitting feedback:", error);
+      alert("Error submitting feedback. Please try again.");
     }
   };
-  
 
-  // ❌ Don't show the feedback button on home route
+  // Don't show the feedback button on home route
   if (location.pathname === "/") {
     return null;
   }
@@ -66,30 +88,45 @@ const Feedback = () => {
         ✨ Give Feedback
       </button>
 
-      {feedbacks.map((review, index) => (
-        <div key={index} className="review-box">
-          <div className="review-stars">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span key={star} className={`star ${star <= review.rating ? 'filled' : ''}`}>★</span>
-            ))}
+      {feedbacks.length === 0 ? (
+        <p>No feedbacks available.</p>
+      ) : (
+        feedbacks.map((review, index) => (
+          <div key={index} className="review-box">
+            <div className="review-stars">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star} className={`star ${star <= review.rating ? "filled" : ""}`}>★</span>
+              ))}
+            </div>
+            <p className="review-text">"{review.text}"</p>
+            <p className="review-meta">- {review.user}, {review.date}</p>
           </div>
-          <p className="review-text">"{review.text}"</p>
-          <p className="review-meta">- {review.user}, {review.date}</p>
-        </div>
-      ))}
+        ))
+      )}
 
       {showModal && (
         <div className="modal-overlay">
           <div className="modal">
             <h3>Submit Your Feedback</h3>
             <form onSubmit={handleSubmit}>
-              <input type="text" name="user" placeholder="Your Name" onChange={handleInputChange} required />
-              <textarea name="text" placeholder="Your Review" onChange={handleInputChange} required />
+              <input
+                type="text"
+                name="user"
+                placeholder="Your Name"
+                onChange={handleInputChange}
+                required
+              />
+              <textarea
+                name="text"
+                placeholder="Your Review"
+                onChange={handleInputChange}
+                required
+              />
               <div className="rating-stars">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
                     key={star}
-                    className={`star ${star <= newReview.rating ? 'filled' : ''}`}
+                    className={`star ${star <= newReview.rating ? "filled" : ""}`}
                     onClick={() => handleRatingClick(star)}
                   >
                     ★
