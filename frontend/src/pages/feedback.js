@@ -15,7 +15,7 @@ const Feedback = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/feedback")
+    fetch("https://consultancy-1-d68u.onrender.com/api/feedback")
       .then(res => res.json())
       .then(data => setFeedbacks(data))
       .catch(err => console.error("Failed to fetch feedbacks:", err));
@@ -33,7 +33,7 @@ const Feedback = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/feedback", {
+      const res = await fetch("https://consultancy-1-d68u.onrender.com/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newReview),
@@ -43,7 +43,7 @@ const Feedback = () => {
       setShowModal(false);
 
       // Refresh feedback list after submitting
-      const updated = await fetch("http://localhost:5000/api/feedback");
+      const updated = await fetch("https://consultancy-1-d68u.onrender.com/api/feedback");
       const updatedData = await updated.json();
       setFeedbacks(updatedData);
     } catch (error) {
