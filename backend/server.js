@@ -98,25 +98,27 @@ app.delete('/manage/:id', async (req, res) => {
 // GET all feedbacks
 app.get('/api/feedback', async (req, res) => {
   try {
-    const feedbacks = await Feedback.find().sort({ date: -1 });
+    const feedbacks = await Feedback.find();
     res.json(feedbacks);
   } catch (err) {
-    console.error('Error fetching feedbacks:', err);
+    console.error('Error fetching feedbacks:', err.message, err.stack);
     res.status(500).json({ error: 'Failed to fetch feedbacks' });
   }
 });
+
 
 // POST feedback
 app.post('/api/feedback', async (req, res) => {
   try {
     const newFeedback = new Feedback(req.body);
     await newFeedback.save();
-    res.status(201).json({ message: 'Feedback saved!' });
+    res.status(201).json(newFeedback); // <-- Return the saved document
   } catch (err) {
     console.error('Error saving feedback:', err);
     res.status(400).json({ error: 'Failed to save feedback', details: err.errors });
   }
 });
+
 
 // ----------------------------------------------------------
 
