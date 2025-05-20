@@ -4,12 +4,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react-google-maps";
 
 const Contact = () => {
-  const position = { lat: 17.3850, lng: 78.4867 };
-  const API_KEY ="AIzaSyAYVLpZz7UbRd58cEZikQ_fg5T9YkAJjm0";
+  const position = { lat: 11.2183, lng: 78.1670 }; // Updated to Namakkal, Paramathi Road
+  const API_KEY = "AIzaSyAYVLpZz7UbRd58cEZikQ_fg5T9YkAJjm0";
 
   return (
     <div className="contact-page">
-      {/* Card 1: Contact Info */}
+      {/* Contact Info Card */}
       <div className="contact-card">
         <h2 className="card-title">Contact Info</h2>
         <p className="card-description">
@@ -21,17 +21,17 @@ const Contact = () => {
           <div className="icon-circle">
             <i className="fas fa-phone"></i>
           </div>
-          <span className="info-text">+91 85086 63743</span>
+          <span className="info-text">+91 98426 14143, 99426 88911</span>
         </div>
         <div className="info-item">
           <div className="icon-circle">
             <i className="fas fa-envelope"></i>
           </div>
-          <span className="info-text">vaibhavilogistics@gmail.com</span>
+          <span className="info-text">vaibhavilogistics@yahoo.com</span>
         </div>
       </div>
 
-      {/* Card 2: Opening Hours (previously card 3) */}
+      {/* Opening Hours Card */}
       <div className="contact-card">
         <h2 className="card-title">Opening Hours</h2>
         <p className="card-text">Monday - Friday &nbsp; 09:00 AM – 10:00 PM</p>
@@ -51,18 +51,18 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Card 3: Google Map (previously card 2) */}
+      {/* Google Map Card */}
       <div className="map-card">
         <h2 className="card-title">Our Location</h2>
         <APIProvider apiKey={API_KEY}>
           <div className="map-container">
-            <Map zoom={13} center={position} mapId="YOUR_MAP_ID">
+            <Map zoom={15} center={position} mapId="YOUR_MAP_ID">
               <AdvancedMarker position={position}>
-                <Pin background={"#E74C3C"} borderColor={"#C0392B"} glyphColor={"#FFFFFF"} />
+                <Pin background="#E74C3C" borderColor="#C0392B" glyphColor="#FFFFFF" />
                 <InfoWindow>
                   <div className="info-window">
                     <h3>Vaibhavi Logistics</h3>
-                    <p>Your Trusted Transportation Partner</p>
+                    <p>6/948-A, Velmurugan Towers, Paramathi Road, Namakkal</p>
                   </div>
                 </InfoWindow>
               </AdvancedMarker>
