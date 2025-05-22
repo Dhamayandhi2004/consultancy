@@ -13,7 +13,7 @@ const Feedback = () => {
     date: new Date().toISOString().split("T")[0],
   });
 
-  const API_URL = "https://consultancy-1-d68u.onrender.com/api/feedback";
+  const API_URL = "http://localhost:5000/api/feedback";
 
   useEffect(() => {
     const fetchFeedbacks = async () => {

@@ -25,7 +25,7 @@ const Manage = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  const apiUrl = 'https://consultancy-1-d68u.onrender.com/manage';
+  const apiUrl = 'http://localhost:5000/manage';
 
   useEffect(() => {
     fetchBuses();
