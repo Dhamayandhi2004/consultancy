@@ -1,32 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../css/Transportation.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "../css/Transportation.css";
 
 const Transportation = () => {
   const [buses, setBuses] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(true);
+  const [inputFocused, setInputFocused] = useState(false);
 
   useEffect(() => {
-    axios.get('https://consultancy-1-ksvi.onrender.com/manage')
-      .then(res => setBuses(res.data))
-      .catch(err => console.error(err));
+    axios
+      .get("https://consultancy-1-ksvi.onrender.com/manage")
+      .then((res) => setBuses(res.data))
+      .catch((err) => console.error(err));
   }, []);
 
-  const filteredBuses = buses.filter(bus =>
-    bus.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    bus.to.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    bus.driverName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    bus.route.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredBuses = buses.filter(
+    (bus) =>
+      bus.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      bus.to.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      bus.driverName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      bus.route.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const suggestions = searchTerm
     ? buses
-        .filter(bus =>
-          bus.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          bus.to.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          bus.driverName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          bus.route.toLowerCase().includes(searchTerm.toLowerCase())
+        .filter(
+          (bus) =>
+            bus.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            bus.to.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            bus.driverName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            bus.route.toLowerCase().includes(searchTerm.toLowerCase())
         )
         .slice(0, 5)
     : [];
@@ -61,15 +65,22 @@ const Transportation = () => {
               setSearchTerm(e.target.value);
               setShowSuggestions(true);
             }}
+            onFocus={() => setInputFocused(true)}
+            onBlur={() => {
+              setTimeout(() => setInputFocused(false), 200); // delay so click is registered
+            }}
           />
+
           <button>Search</button>
         </div>
-        {showSuggestions && suggestions.length > 0 && (
+        {showSuggestions && inputFocused && suggestions.length > 0 && (
           <ul className="suggestion-list">
             {suggestions.map((bus, index) => (
               <li
                 key={index}
-                onClick={() => handleSuggestionClick(`${bus.from} to ${bus.to}`)}
+                onClick={() =>
+                  handleSuggestionClick(`${bus.from} to ${bus.to}`)
+                }
               >
                 {bus.from} to {bus.to} - {bus.driverName}
               </li>
@@ -82,18 +93,33 @@ const Transportation = () => {
         {filteredBuses.length === 0 ? (
           <p>No buses available.</p>
         ) : (
-          filteredBuses.map(bus => (
+          filteredBuses.map((bus) => (
             <div key={bus._id} className="bus-card">
               <div className="card-header">
-                <h3>{bus.from} to {bus.to}</h3>
+                <h3>
+                  {bus.from} to {bus.to}
+                </h3>
                 {/* {getTypeBadge(bus.busType)} */}
               </div>
-              <p><strong>Driver:</strong> {bus.driverName}</p>
-              <p><strong>Bus No:</strong> {bus.busNumber}</p>
-              <p><strong>Timings:</strong> {bus.departureTime} - {bus.arrivalTime}</p>
-              <p><strong>Contact:</strong> {bus.contact}</p>
-              <p><strong>Fare:</strong> ₹{bus.fare}</p>
-              <p><strong>For every {bus.frequency} mins</strong></p>
+              <p>
+                <strong>Driver:</strong> {bus.driverName}
+              </p>
+              <p>
+                <strong>Bus No:</strong> {bus.busNumber}
+              </p>
+              <p>
+                <strong>Timings:</strong> {bus.departureTime} -{" "}
+                {bus.arrivalTime}
+              </p>
+              <p>
+                <strong>Contact:</strong> {bus.contact}
+              </p>
+              <p>
+                <strong>Fare:</strong> ₹{bus.fare}
+              </p>
+              <p>
+                <strong>For every {bus.frequency} mins</strong>
+              </p>
             </div>
           ))
         )}
