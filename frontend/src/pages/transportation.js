@@ -8,7 +8,7 @@ const Transportation = () => {
   const [showSuggestions, setShowSuggestions] = useState(true);
 
   useEffect(() => {
-    axios.get('https://consultancy-1-d68u.onrender.com/manage')
+    axios.get('https://consultancy-1-ksvi.onrender.com/manage')
       .then(res => setBuses(res.data))
       .catch(err => console.error(err));
   }, []);
