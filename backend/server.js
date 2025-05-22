@@ -5,9 +5,10 @@ const mongoose = require('mongoose');
 
 const app = express();
 app.use(cors({
-  origin: ['https://consultancy-ashen.vercel.app/'],
-  credentials: true
+  origin: 'https://consultancy-ashen.vercel.app',
+  credentials: true // Optional: if you use cookies or auth
 }));
+
 app.use(express.json());
 
 // MongoDB Connection
